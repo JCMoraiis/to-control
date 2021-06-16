@@ -1,184 +1,192 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
-	<title>To Control</title>
-	<link rel="shortcut icon" href="iot.png">
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="style.css">
-	</head>
-		<body>
-	<h1>Projeto Sistemas Digitais</h1>
-	<p id="components">Júlio Oliveira e Gabriel Bazante</p>
-	<div class="container content">
-	<br/>
-	<div class="col s12 m6">
-	<div class="card">
-	<div class="card-image center">
-		<span id="currentTemp" class="statistic">-</span>
-	</div>
-	<div class="card-content">
-		<span class="card-title activator grey-text text-darken-4">
-			Temperatura
-			<i class="material-icons right">history</i>
-		</span>
-		Clique para ver histórico
-	</div>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4">
-			Histórico
-			<i class="material-icons right">close</i>
-		</span>
-		<canvas id="tempLineChart"></canvas>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card">
-	<div class="card-image center">
-		<span id="currentLum" class="statistic">-</span>
-	</div>
-	<div class="card-content">
-		<span class="card-title activator grey-text text-darken-4">
-		Luminosidade
-		<i class="material-icons right">history</i>
-		</span>
-		Clique para ver histórico
-	</div>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4">
-		Histórico
-		<i class="material-icons right">close</i>
-		</span>
-		<canvas id="lumLineChart"></canvas>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card">
-	<div class="card-image center">
-		<span id="currentDist" class="statistic">-</span>
-	</div>
-	<div class="card-content">
-		<span class="card-title activator grey-text text-darken-4">
-		Distancia
-		<i class="material-icons right">history</i>
-		</span>
-		Clique para ver histórico
-	</div>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4">
-		Histórico
-		<i class="material-icons right">close</i>
-		</span>
-		<canvas id="distLineChart"></canvas>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card">
-	<div class="card-image center">
-		<span id="currentUmid" class="statistic">-</span>
-	</div>
-	<div class="card-content activator">
-		<span class="card-title grey-text text-darken-4">
-		Umidade
-		<i class="material-icons right">history</i>
-		</span>
-		Clique para ver histórico
-	</div>
-	<div class="card-reveal">
-		<span class="card-title grey-text text-darken-4">
-		Histórico
-		<i class="material-icons right">close</i>
-		</span>
-		<canvas id="umidLineChart"></canvas>
-	</div>
-	</div>
-	</div>
-	<p>
-	<img id="porta" src="Porta Aberta.png" data-state= "" alt="">
-	<img id="presenca" src="SensorPIR desligado.png" data-state= ""
-	alt="">
-	</p>
-	<div class="col s12 m6">
-	<div class="card" style="padding-bottom:20px">
-	<div class="card-image center">
-	<i id="currentLamp" class="material-icons
+
+<head>
+    <meta charset="utf-8">
+    <title>To Control</title>
+    <link rel="shortcut icon" href="iot.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Projeto Sistemas Digitais</h1>
+    <p id="components">Júlio Oliveira e Gabriel Bazante</p>
+    <div class="container content">
+        <br />
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center">
+                    <span id="currentTemp" class="statistic">-</span>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                        Temperatura
+                        <i class="material-icons right">history</i>
+                    </span>
+                    Clique para ver histórico
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        Histórico
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <canvas id="tempLineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center">
+                    <span id="currentLum" class="statistic">-</span>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                        Luminosidade
+                        <i class="material-icons right">history</i>
+                    </span>
+                    Clique para ver histórico
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        Histórico
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <canvas id="lumLineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center">
+                    <span id="currentDist" class="statistic">-</span>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">
+                        Distancia
+                        <i class="material-icons right">history</i>
+                    </span>
+                    Clique para ver histórico
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        Histórico
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <canvas id="distLineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image center">
+                    <span id="currentUmid" class="statistic">-</span>
+                </div>
+                <div class="card-content activator">
+                    <span class="card-title grey-text text-darken-4">
+                        Umidade
+                        <i class="material-icons right">history</i>
+                    </span>
+                    Clique para ver histórico
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">
+                        Histórico
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <canvas id="umidLineChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <p>
+            <img id="porta" src="Porta Aberta.png" data-state="" alt="">
+            <img id="presenca" src="SensorPIR desligado.png" data-state="" alt="">
+        </p>
+        <div class="col s12 m6">
+            <div class="card" style="padding-bottom:20px">
+                <div class="card-image center">
+                    <i id="currentLamp" class="material-icons
 	statistic">wb_incandescent</i>
-	</div>
-	<div class="card-content">
-		<span class="card-title grey-text text-darken-4">
-		Set_Luminosidade
-		</span>
-		<a class="waves-effect waves-light btn col s12" id="btn-lamp">
-		<i class="material-icons left">power_settings_new</i>
-		Ligar/Desligar
-		</a>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card" style="padding-bottom:20px">
-	<div class="card-image center">
-		<i id="currentAr" class="material-icons statistic">ac_unit</i>
-	</div>
-	<div class="card-content">
-		<span class="card-title grey-text text-darken-4">
-			Set_Ar
-		</span>
-		<a class="waves-effect waves-light btn col s12" id="btn-ar">
-		<i class="material-icons left">power_settings_new</i>
-		Ligar/Desligar
-		</a>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card" style="padding-bottom:20px">
-	<div class="card-image center">
-		<i id="currentMultimidia" class="material-icons
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">
+                        Set_Luminosidade
+                    </span>
+                    <a class="waves-effect waves-light btn col s12" id="btn-lamp">
+                        <i class="material-icons left">power_settings_new</i>
+                        Ligar/Desligar
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card" style="padding-bottom:20px">
+                <div class="card-image center">
+                    <i id="currentAr" class="material-icons statistic">ac_unit</i>
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">
+                        Set_Ar
+                    </span>
+                    <a class="waves-effect waves-light btn col s12" id="btn-ar">
+                        <i class="material-icons left">power_settings_new</i>
+                        Ligar/Desligar
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card" style="padding-bottom:20px">
+                <div class="card-image center">
+                    <i id="currentMultimidia" class="material-icons
 	statistic">local_movies</i>
-	</div>
-	<div class="card-content">
-	<span class="card-title grey-text text-darken-4">
-		Set_Multimidia
-	</span>
-	<a class="waves-effect waves-light btn col s12"id="btn-multimidia">
-		<i class="material-icons left">power_settings_new</i>
-		Ligar/Desligar
-	</a>
-	</div>
-	</div>
-	</div>
-	<div class="col s12 m6">
-	<div class="card" style="padding-bottom:20px">
-	<div class="card-image center">
-		<i id="currentSetPorta" class="material-icons statistic">sensor_door</i>
-	</div>
-	<div class="card-content">
-		<span class="card-title grey-text text-darken-4">
-			Set_Porta
-		</span>
-		<a class="waves-effect waves-light btn col s12" id="btn-porta">
-		<i class="material-icons left">power_settings_new</i>
-			Abrir/Fechar
-		</a>
-	</div>
-	</div>
-	</div>
-	</div>
-	</div>
-	</body>
-	<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
-	<script src="app.js"></script>
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">
+                        Set_Multimidia
+                    </span>
+                    <a class="waves-effect waves-light btn col s12" id="btn-multimidia">
+                        <i class="material-icons left">power_settings_new</i>
+                        Ligar/Desligar
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card" style="padding-bottom:20px">
+                <div class="card-image center">
+                    <i id="currentSetPorta" class="material-icons statistic">sensor_door</i>
+                </div>
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4">
+                        Set_Porta
+                    </span>
+                    <a class="waves-effect waves-light btn col s12" id="btn-porta">
+                        <i class="material-icons left">power_settings_new</i>
+                        Abrir/Fechar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="app.js"></script>
+    
+
+
+
+</body>
+
+
+
+
 </html>
